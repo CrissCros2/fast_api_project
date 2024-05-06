@@ -11,8 +11,8 @@ services:
       timeout: 5s
   frontend:
     build: fast_api_project_frontend
-    command: sh -c "npm run start"
+    command: sh -c "nginx -g 'daemon off;'"
     ports:
-      - "3000:3000"
+      - "3000:80"
     depends_on:
       - backend
