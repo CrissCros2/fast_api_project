@@ -1,0 +1,18 @@
+services:
+  backend:
+    build: fast_api_project_backend
+    command: sh -c "uvicorn v0.main:app --port=8000 --host=0.0.0.0"
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      retries: 5
+      timeout: 5s
+  frontend:
+    build: fast_api_project_frontend
+    command: sh -c "npm run start"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend

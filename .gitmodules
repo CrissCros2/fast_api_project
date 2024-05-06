@@ -1,0 +1,6 @@
+[submodule "fast_api_project_backend"]
+	path = fast_api_project_backend
+	url = git@github.com:CrissCros2/fast_api_project_backend.git
+[submodule "fast_api_project_frontend"]
+	path = fast_api_project_frontend
+	url = git@github.com:CrissCros2/fast_api_project_frontend.git
