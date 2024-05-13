@@ -53,13 +53,13 @@ def add_person(db_session: Session):
         id=UUID("f531c403-2fb4-4de9-8b4d-848462adb6cc"),
         title="blah",
         description="blah",
-        time=datetime.now(),
+        time=datetime(2024, 5, 13),
     )
     db_event2 = EventTable(
         id=UUID("f531c403-2fb4-4de9-8b4d-848462adb6cd"),
         title="blah",
         description="blah",
-        time=datetime.now(),
+        time=datetime(2024, 6, 13),
     )
     db_session.add(db_person1)
     db_session.add(db_person2)

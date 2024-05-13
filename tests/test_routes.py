@@ -295,3 +295,14 @@ class TestGetPersonsEvent(RoutesTest):
         assert response_bad.status_code is status.HTTP_404_NOT_FOUND
         assert response_good.status_code is status.HTTP_200_OK
         assert response_good.json()
+
+
+class TestGetEventsInWindow(RoutesTest):
+
+    route = f"/events/event_window?start_time={datetime(2024, 5, 12)}&end_time={datetime(2024, 5, 14)}"
+
+    def test_get(self, client):
+        response = client.get(self.route)
+        assert response.status_code is status.HTTP_200_OK
+        assert response.json()
+        assert len(response.json()) == 1

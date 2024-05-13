@@ -35,6 +35,7 @@ class PersonCRUD:
         if db_person:
             # noinspection PyTypeChecker
             db.query(PersonTable).filter(PersonTable.id == row_id).delete()
+            db.commit()
             return db_person
         return None
 
@@ -109,6 +110,15 @@ class EventCRUD:
     @classmethod
     def get_all_events(cls, db: Session):
         return db.query(EventTable).all()
+
+    @classmethod
+    def get_events_in_window(cls, db: Session, start_time, end_time):
+        # noinspection PyTypeChecker
+        return (
+            db.query(EventTable)
+            .filter(EventTable.time >= start_time, EventTable.time <= end_time)
+            .all()
+        )
 
     @classmethod
     def delete_by_id(cls, db: Session, row_id: UUID):

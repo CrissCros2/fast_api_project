@@ -4,6 +4,7 @@ from fastapi import APIRouter, Depends
 from fastapi.responses import JSONResponse
 from starlette import status
 from sqlalchemy.orm import Session
+from datetime import datetime
 
 from api_models import Event
 from db.crud import EventCRUD
@@ -19,6 +20,28 @@ async def get_all_events(db: Session = Depends(get_db)):
     """
     events_list: list[Event] = []
     db_events = EventCRUD.get_all_events(db)
+    for db_event in db_events:
+        events_list.append(
+            Event(
+                id=db_event.id,
+                title=db_event.title,
+                description=db_event.description,
+                time=db_event.time,
+                persons=EventCRUD.get_persons_from_event(db, db_event.id),
+            )
+        )
+    return events_list
+
+
+@events.get("/event_window")
+async def get_events_in_window(
+    start_time: datetime, end_time: datetime, db: Session = Depends(get_db)
+):
+    """
+    Get all events within a time window
+    """
+    events_list: list[Event] = []
+    db_events = EventCRUD.get_events_in_window(db, start_time, end_time)
     for db_event in db_events:
         events_list.append(
             Event(

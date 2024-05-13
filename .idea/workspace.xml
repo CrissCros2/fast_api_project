@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdba0ebb-582f-4159-98da-52eb8b829cbd" name="Changes" comment="Add db files to gitignore">
-      <change beforePath="$PROJECT_DIR$/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/db.py" afterDir="false" />
+    <list default="true" id="cdba0ebb-582f-4159-98da-52eb8b829cbd" name="Changes" comment="Restructure directory">
+      <change beforePath="$PROJECT_DIR$/.idea/fast_api_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fast_api_project_backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/crud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v0/events.py" beforeDir="false" afterPath="$PROJECT_DIR$/v0/events.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,20 +47,20 @@
     "Python tests.pytest for test_routes.TestPersonsRoot.test_get.executor": "Debug",
     "Python tests.pytest for test_routes.TestPersonsRoot.test_post.executor": "Run",
     "Python tests.pytest in test_routes.py.executor": "Coverage",
-    "Python tests.pytest in tests.executor": "Run",
-    "Python.Run with reload.executor": "Run",
+    "Python tests.pytest in tests.executor": "Debug",
+    "Python.Run with reload.executor": "Debug",
     "Python.run.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/chris/OneDrive/Desktop/python/fast_api_project",
+    "last_opened_file_path": "C:/Users/chris/OneDrive/Desktop/python/fast_api_project_backend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -68,9 +74,8 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.12 (fast_api_project)" />
-      <option name="WORKING_DIRECTORY" value="C:\Users\chris\OneDrive\Desktop\python\fast_api_project" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\chris\OneDrive\Desktop\python\fast_api_project_backend" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -197,6 +202,7 @@
     <list>
       <item itemvalue="Python.Run with reload" />
       <item itemvalue="Python.run" />
+      <item itemvalue="Python tests.Pytest" />
       <item itemvalue="Python tests.pytest for test_routes.TestPersonsRoot.test_get" />
       <item itemvalue="Python tests.pytest for test_routes.TestPersonsRoot.test_post" />
       <item itemvalue="Python tests.pytest in test_routes.py" />
@@ -205,10 +211,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.pytest in tests" />
-        <item itemvalue="Python tests.pytest for test_routes.TestPersonsRoot.test_post" />
-        <item itemvalue="Python tests.pytest for test_routes.TestPersonsRoot.test_get" />
-        <item itemvalue="Python.run" />
-        <item itemvalue="Python tests.pytest in test_routes.py" />
       </list>
     </recent_temporary>
   </component>
@@ -230,6 +232,17 @@
       <updated>1714239959508</updated>
       <workItem from="1714239960974" duration="4959000" />
       <workItem from="1714294038588" duration="7200000" />
+      <workItem from="1714766445564" duration="1785000" />
+      <workItem from="1714810950562" duration="3128000" />
+      <workItem from="1714835219230" duration="612000" />
+      <workItem from="1714850662593" duration="442000" />
+      <workItem from="1714900380123" duration="3146000" />
+      <workItem from="1715006319443" duration="92000" />
+      <workItem from="1715006431769" duration="15000" />
+      <workItem from="1715419808224" duration="1256000" />
+      <workItem from="1715500713346" duration="3985000" />
+      <workItem from="1715532798202" duration="2478000" />
+      <workItem from="1715621869167" duration="1043000" />
     </task>
     <task id="LOCAL-00001" summary="Remove router file was unecessary">
       <option name="closed" value="true" />
@@ -387,13 +400,26 @@
     <MESSAGE value="Add db files to gitignore" />
     <option name="LAST_COMMIT_MESSAGE" value="Add db files to gitignore" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests/test_routes.py</url>
+          <line>306</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/fast_api_project_backend$pytest_in_tests.coverage" NAME="pytest in tests Coverage Results" MODIFIED="1715622850050" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/fast_api_project$pytest_in_test_routes_py.coverage" NAME="pytest in test_routes.py Coverage Results" MODIFIED="1714295352701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/fast_api_project$pytest_in_tests.coverage" NAME="pytest in tests Coverage Results" MODIFIED="1714301205724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/fast_api_project_backend$Run_with_reload.coverage" NAME="Run with reload Coverage Results" MODIFIED="1715622393933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\chris\OneDrive\Desktop\python\fast_api_project_backend" />
     <SUITE FILE_PATH="coverage/fast_api_project$run.coverage" NAME="run Coverage Results" MODIFIED="1714297297623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/fast_api_project$pytest_for_test_routes_TestPersonsRoot_test_get.coverage" NAME="pytest for test_routes.TestPersonsRoot.test_get Coverage Results" MODIFIED="1714299765448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/fast_api_project$Run_with_reload.coverage" NAME="Run with reload Coverage Results" MODIFIED="1714300414214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\chris\OneDrive\Desktop\python\fast_api_project" />
     <SUITE FILE_PATH="coverage/fast_api_project$pytest_for_test_routes_TestPersonsRoot_test_post.coverage" NAME="pytest for test_routes.TestPersonsRoot.test_post Coverage Results" MODIFIED="1714300759687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/fast_api_project$Run_with_reload.coverage" NAME="Run with reload Coverage Results" MODIFIED="1714905089625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\chris\OneDrive\Desktop\python\fast_api_project" />
     <SUITE FILE_PATH="coverage/fast_api_project$.coverage" NAME=" Coverage Results" MODIFIED="1714240310107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
 </project>
